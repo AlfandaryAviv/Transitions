@@ -15,7 +15,7 @@
         
         format: (node, year, label, count, percent)
           
-          •	 node: node id - int
+          •	node: node id - int
           
           •	year: int
           
@@ -59,7 +59,7 @@
         1,3,1998,9
 
 
-3.  download graphs-measures repository from the labs git: 
+3.  download graphs-measures repository from the lab's git: 
     
     https://github.com/louzounlab/graph-measures
 
@@ -69,17 +69,17 @@
 
     Dataset_Name is any data with the input format and data types
 
-    current_nodes_path is the location of the nodes input: "./dataset/" + str(Dataset_Name) + "/nodes.csv"
+    current_nodes_path is the location of the nodes input: "./dataset/" + str(Dataset_Name) + "/input_files/nodes.csv"
 
-    current_edges_path is the location of the edges input: "./dataset/" + str(Dataset_Name) + "/edges.csv"
+    current_edges_path is the location of the edges input: "./dataset/" + str(Dataset_Name) + "/input_files/edges.csv"
 
-    Neighbors_Factor is the weight parameter for neighbors edges (represents a relationship at the same timestamp)
+    Neighbors_Factor is the weight of neighbors edges (represents a relationship at the same timestamp)
 
-    Timed_Factor is the weight parameter for timed edges (a connection between a vertex to himself on the different time lines)
+    Timed_Factor is the weight of the timed edges (a connection between a vertex to himself on the different timestamps)
 
-    Similarity_Factor is the weights parameter for the similarity edges (generated from the GCN)
+    Similarity_Factor is the weights of the the similarity edges (generated from the GCN)
 
-    Communal_Resolution effects the size of the community 
+    Communal_Resolution effects the size of the community
 
     Dataset_time_range in array format: [min_year, max year]
 
