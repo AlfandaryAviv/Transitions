@@ -1,6 +1,6 @@
 # Transitions
 
-Identifying transitions of labeled communal vertices within dynamic graphs
+Identifying transitions of labeled communal vertices in dynamic graphs
 
 implemantation of two approaches:
 1. Communal_Transitions
