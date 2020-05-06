@@ -59,7 +59,11 @@
         1,3,1998,9
 
 
-3.	Change the parameters:
+3.  download graphs-measures repository from the labs git: 
+    
+    https://github.com/louzounlab/graph-measures
+
+4.	Change the parameters:
 
 #### dataset parameters
 
@@ -87,13 +91,13 @@
 
 #### GCN Parameters
 
-    Net
+    Net is either GCNNet3 (3 conv layers) or GCNNet2 (2 conv layers)
 
     Epochs
 
     Dropout_Rate
 
-    Hidden_Sizes in the format of: [10, 10]
+    Hidden_Sizes in the format of: [10, 10] (if GCNNet2 was chosen the network will take the first element as the size of the hidden layer) 
 
     Learning_Rate
 
