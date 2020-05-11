@@ -3,7 +3,7 @@ import csv
 
 
 
-p=os.getcwd()+"/logs"
+p=os.getcwd()+"/logs" #
 all_dicts = []
 for subdir, dirs, files in os.walk(p):
     for file in files:
@@ -13,3 +13,5 @@ for subdir, dirs, files in os.walk(p):
             b=5
             if "0393" in lines[0]:
                 print(lines[0])
+                
+                
