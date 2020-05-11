@@ -5,6 +5,8 @@ import networkx as nx
 import numpy as np
 from numpy.core.defchararray import find
 
+GRAPHS_NUM = 21
+
 '''
 Building the labels for testing the model (the GCN's outputs). These labels are to define
 whether a person has changed his writing topic, according to our decision what is defined as a change.
@@ -18,7 +20,7 @@ if a time point is surrounded by 1 it's 1, if it's surrounded with 0 it's 1, and
 def load_data():
     graphs = []
     labels = []
-    for i in range(21):
+    for i in range(GRAPHS_NUM):
         with open(os.path.join('graphs_by_years', 'graph_' + str(i) + '.pkl'), 'rb') as f:
             g = pickle.load(f)
         with open(os.path.join('graphs_by_years', 'labels_' + str(i) + '.pkl'), 'rb') as f:
@@ -86,7 +88,7 @@ def build_labels_7_tag():
         g = pickle.load(f)
     print(len(g))
     'for each person, take the 7th column'
-    persons_7_vector = np.zeros((len(g), 21))
+    persons_7_vector = np.zeros((len(g), GRAPHS_NUM))
     persons_7_labeled = np.zeros(len(g))
     label_all_0 = 0
     label_all_1 = 0
