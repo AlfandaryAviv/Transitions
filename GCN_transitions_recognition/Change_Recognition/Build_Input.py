@@ -2,11 +2,12 @@ import os
 import pickle
 import numpy as np
 
+GRAPHS_NUM = 21
 
 def load_data():
     all_labels_from_model = []
-    for i in range(21):
-        with open(os.path.join("gcn_MSE_oneLoss", "gcn_" + str(i) + '.pkl'), 'rb') as f:
+    for i in range(GRAPHS_NUM):
+        with open(os.path.join("gcn_outputs", "gcn_" + str(i) + '.pkl'), 'rb') as f:
             labels_from_model = pickle.load(f)
             all_labels_from_model.append(labels_from_model)
     return all_labels_from_model
@@ -21,20 +22,20 @@ def build_matrices(labels):  # labels = gcn's putput for each year - 21 length, 
             # in the writer matrix, in the line of the year, put an array of the corresponding labels of the gcn's output
             labels_writers[i][year_index] = np.array(labels_year[i])
 
-    with open("matrix_labels_per_writer_from_gcn_output_MSE_weightedLoss.pkl", 'wb') as handle:
+    with open("matrix_labels_per_writer_from_gcn_output.pkl", 'wb') as handle:
         pickle.dump(labels_writers, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 def build_input_7_tag():
-    with open('matrix_labels_per_writer_from_gcn_output_MSE_weightedLoss.pkl', 'rb') as f:
+    with open('matrix_labels_per_writer_from_gcn_output.pkl', 'rb') as f:
         # matrix for each person in the form of 21x15 labels
         all_writers = pickle.load(f)
 
     # now we are interested for each person only in it's 7'th column - the 7'th tag
-    persons_7_vector = np.zeros((len(all_writers), 21))
+    persons_7_vector = np.zeros((len(all_writers), GRAPHS_NUM))
     for idx, person in enumerate(all_writers):
         persons_7_vector[idx] = person.T[7]  # if we want to save this to file
-    with open("input_7_tag_MSE_weightedLoss.pkl", 'wb') as handle:
+    with open("input_7_tag.pkl", 'wb') as handle:
         pickle.dump(persons_7_vector, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
