@@ -2,6 +2,7 @@
 
 In order to test gcn's outputs on the graphs, here are some instructions and files needed for this code to run:
 
+#### Backgroud:
 Our goal is to determine whether a writer is going to change his articles topics. For this, we trained a gcn model,
 and our goal now is to test the it's output, see if we recognise transitions with them, and (F.) define whether a writer is going to move in future.
 
