@@ -10,7 +10,7 @@ import numpy as np
 import networkx as nx
 import pickle
 
-
+GRAPHS_NUM=21
 
 class GCNTemporalCommunities:
     def __init__(self, nni=False):
@@ -22,7 +22,7 @@ class GCNTemporalCommunities:
         graphs = []
         labels = []
         mx_s = []
-        for i in range(10):
+        for i in range(GRAPHS_NUM):
             with open(os.path.join('graphs_by_years', 'graph_' + str(i) + '.pkl'), 'rb') as f:
                 g = pickle.load(f)
             with open(os.path.join('graphs_by_years', 'labels_' + str(i) + '.pkl'), 'rb') as f:
