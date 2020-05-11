@@ -1,5 +1,5 @@
 authorName: Itay_Levinas
-experimentName: fine_tuning_Clique_GCN
+experimentName: fine_tuning_Clique_GCN 
 trialConcurrency: 2 # max GPUs to use simultaneously.
 maxExecDuration: 7h
 maxTrialNum: 4000
