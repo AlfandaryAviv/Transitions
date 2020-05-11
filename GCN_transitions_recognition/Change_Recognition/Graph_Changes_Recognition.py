@@ -15,7 +15,7 @@ class Graph_Changes_Rec():
         self._nni = nni
 
     def _load_data(self):
-        with open('input_7_tag_MSE.pkl', 'rb') as f:
+        with open('input_7_tag.pkl', 'rb') as f:
             input_data = pickle.load(f)
             #labels_per_writer_7_tag
         with open('labels_per_writer_7_tag.pkl', 'rb') as f:
