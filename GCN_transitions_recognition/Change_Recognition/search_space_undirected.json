@@ -1,0 +1,26 @@
+{
+  "optimizer": {
+    "_type": "choice",
+    "_value": ["Adam","SGD"]
+  },
+  "learning_rate": {
+    "_type": "quniform",
+    "_value": [1e-8, 0.3, 1e-8]
+  },
+  "dropout": {
+    "_type": "uniform",
+    "_value": [0, 0.5]
+  },
+  "regularization": {
+    "_type": "uniform",
+    "_value": [0, 0.3]
+  },
+  "hid_features": {
+    "_type": "choise",
+    "_value": [20, 40, 60]
+  },
+  "epochs": {
+    "_type": "quniform",
+    "_value": [20, 250, 5]
+  }
+}
