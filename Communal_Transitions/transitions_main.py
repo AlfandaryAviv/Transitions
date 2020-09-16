@@ -482,7 +482,7 @@ class Transitions(object):
     def plot_compaint(self):
         biggest_community = max(self.com_size_test.items(), key=operator.itemgetter(1))[1]
         largest_power_of_2 = math.ceil(math.log2(biggest_community))
-        bins = np.logspace(0, largest_power_of_2 - 1, num=largest_power_of_2, base=2.0)
+        bins = np.logspace(0, largest_power_of_2, num=largest_power_of_2+1, base=2.0)
         com_count = {}
         com_bin = {}
         bin_list, all, communityid, paint_list = [], [], [], []
